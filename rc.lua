@@ -578,11 +578,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
---awful.util.spawn("compton")
 awful.util.spawn("compton --backend glx --blur-background --blur-kern '11x11gaussian'")
-awful.util.spawn("nitrogen --restore")
---awful.util.spawn("x-terminal-emulator -e python3 ~/code/py/startups/__main__.py")
+awful.spawn("xfce4-terminal -e 'nitrogen --restore'")
 awful.util.spawn("xfce4-power-manager")
+awful.spawn("xfce4-terminal")
 
 -- Window Gaps
 beautiful.useless_gap = 6
